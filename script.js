@@ -1,5 +1,87 @@
 // Bot de derecho simple
 document.addEventListener('DOMContentLoaded', function() {
+    // --- LOGIN CON GOOGLE ---
+    window.onGoogleSignIn = function(googleUser) {
+        const profile = googleUser.getBasicProfile();
+        document.getElementById('user-info').style.display = 'block';
+        document.getElementById('user-info').innerHTML = `<b>Bienvenido, ${profile.getName()}</b><br><img src="${profile.getImageUrl()}" width="40" style="border-radius:50%"> <br>${profile.getEmail()}`;
+        document.getElementById('google-signin-btn').style.display = 'none';
+    };
+    // Render Google button
+    if (document.getElementById('google-signin-btn')) {
+        const script = document.createElement('script');
+        script.src = 'https://accounts.google.com/gsi/client';
+        script.onload = function() {
+            google.accounts.id.initialize({
+                client_id: '6985525590-9b8r050ib4f09fh7rdf8j47eqrrknhr0.apps.googleusercontent.com',
+                callback: (response) => {
+                    // Decodificar JWT para obtener datos básicos
+                    const base64Url = response.credential.split('.')[1];
+                    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                    }).join(''));
+                    const data = JSON.parse(jsonPayload);
+                    document.getElementById('user-info').style.display = 'block';
+                    document.getElementById('user-info').innerHTML = `<b>Bienvenido, ${data.name}</b><br><img src="${data.picture}" width="40" style="border-radius:50%"> <br>${data.email}`;
+                    document.getElementById('google-signin-btn').style.display = 'none';
+                }
+            });
+            google.accounts.id.renderButton(
+                document.getElementById('google-signin-btn'),
+                { theme: 'outline', size: 'large' }
+            );
+        };
+        document.body.appendChild(script);
+    }
+
+    // --- FORO ---
+    const foroForm = document.getElementById('foro-form');
+    const foroTextarea = document.getElementById('foro-textarea');
+    const foroMensajes = document.getElementById('foro-mensajes');
+    if (foroForm && foroTextarea && foroMensajes) {
+        foroForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const mensaje = foroTextarea.value.trim();
+            if (mensaje) {
+                const div = document.createElement('div');
+                div.className = 'foro-msg';
+                div.innerHTML = `<b>Usuario:</b> ${mensaje}`;
+                foroMensajes.appendChild(div);
+                foroTextarea.value = '';
+                foroMensajes.scrollTop = foroMensajes.scrollHeight;
+            }
+        });
+    }
+
+    // --- CHAT GENERAL ---
+    const chatGeneralForm = document.getElementById('chat-general-form');
+    const chatGeneralInput = document.getElementById('chat-general-input');
+    const chatGeneralBox = document.getElementById('chat-general-box');
+    if (chatGeneralForm && chatGeneralInput && chatGeneralBox) {
+        chatGeneralForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const mensaje = chatGeneralInput.value.trim();
+            if (mensaje) {
+                const div = document.createElement('div');
+                div.className = 'user-msg';
+                div.innerHTML = `<b>Tú:</b> ${mensaje}`;
+                chatGeneralBox.appendChild(div);
+                chatGeneralInput.value = '';
+                chatGeneralBox.scrollTop = chatGeneralBox.scrollHeight;
+            }
+        });
+    }
+
+    // --- CONTACTO ---
+    const contactoForm = document.getElementById('contacto-form');
+    if (contactoForm) {
+        contactoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Mensaje enviado! Nos pondremos en contacto contigo pronto.');
+            contactoForm.reset();
+        });
+    }
     // Manejo de archivos
     const fileInput = document.getElementById('bot-file');
     if (fileInput) {

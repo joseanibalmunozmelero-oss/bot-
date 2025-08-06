@@ -21,6 +21,53 @@
         </nav>
     </header>
     <main>
+        <!-- LOGIN GOOGLE -->
+        <section id="login-google">
+            <h2>Acceso</h2>
+            <div id="google-signin-btn"></div>
+            <div id="user-info" style="display:none; margin-top:1rem;"></div>
+        </section>
+
+        <!-- EQUIPO -->
+        <section id="equipo">
+            <h2>El Equipo</h2>
+            <div class="equipo-lista">
+                <div class="miembro">
+                    <h3>Lic. Ana Pérez</h3>
+                    <p>Especialista en derecho civil.</p>
+                </div>
+                <div class="miembro">
+                    <h3>Lic. Juan Gómez</h3>
+                    <p>Especialista en derecho penal.</p>
+                </div>
+                <div class="miembro">
+                    <h3>Lic. María López</h3>
+                    <p>Especialista en derecho laboral.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORO -->
+        <section id="foro">
+            <h2>Foro</h2>
+            <div class="foro-mensajes" id="foro-mensajes"></div>
+            <form id="foro-form">
+                <textarea id="foro-textarea" placeholder="Escribe tu mensaje..." required></textarea>
+                <button type="submit">Publicar</button>
+            </form>
+        </section>
+
+        <!-- CHAT GENERAL -->
+        <section id="chat-general">
+            <h2>Chat General</h2>
+            <div id="chat-general-box" class="bot-chat"></div>
+            <form id="chat-general-form" autocomplete="off">
+                <input type="text" id="chat-general-input" placeholder="Escribe un mensaje..." required />
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- BOT DERECHO -->
         <section id="bot-derecho">
             <h2>Bot de Derecho</h2>
             <div id="bot-chat" class="bot-chat"></div>
@@ -33,9 +80,20 @@
                 <input type="file" id="bot-file" accept=".txt,.pdf,.jpg,.jpeg,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,image/jpeg">
             </div>
         </section>
+
+        <!-- CONTACTO -->
         <section id="contacto">
             <h2>Contacto</h2>
-            <p>¿Tienes preguntas? Escríbenos a <a href="mailto:info@asesorialegal.com">info@asesorialegal.com</a> o llama al 555-123-456.</p>
+            <form id="contacto-form">
+                <label for="nombre-contacto">Nombre:</label>
+                <input type="text" id="nombre-contacto" name="nombre-contacto" required>
+                <label for="email-contacto">Email:</label>
+                <input type="email" id="email-contacto" name="email-contacto" required>
+                <label for="mensaje-contacto">Mensaje:</label>
+                <textarea id="mensaje-contacto" name="mensaje-contacto" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <p style="margin-top:1rem;">O escríbenos a <a href="mailto:info@asesorialegal.com">info@asesorialegal.com</a> o llama al 555-123-456.</p>
         </section>
     </main>
     <!-- Librerías externas para análisis de archivos -->
