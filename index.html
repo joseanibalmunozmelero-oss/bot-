@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesoría Legal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Asesoría Legal</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#equipo">El Equipo</a></li>
+                <li><a href="#foro">Foro</a></li>
+                <li><a href="#consultas">Consultas</a></li>
+                <li><a href="#agenda">Agenda Consultas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="bot-derecho">
+            <h2>Bot de Derecho</h2>
+            <div id="bot-chat" class="bot-chat"></div>
+            <form id="bot-form" autocomplete="off">
+                <input type="text" id="bot-input" placeholder="Haz tu pregunta legal aquí..." required />
+                <button type="submit">Enviar</button>
+            </form>
+            <div style="margin-top:1rem;">
+                <label for="bot-file">O sube un archivo para analizar (txt, pdf, jpg, doc, docx):</label>
+                <input type="file" id="bot-file" accept=".txt,.pdf,.jpg,.jpeg,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,image/jpeg">
+            </div>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¿Tienes preguntas? Escríbenos a <a href="mailto:info@asesorialegal.com">info@asesorialegal.com</a> o llama al 555-123-456.</p>
+        </section>
+    </main>
+    <!-- Librerías externas para análisis de archivos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.0/mammoth.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.0.4/dist/tesseract.min.js"></script>
+    <footer>
+        <p>&copy; 2025 Asesoría Legal. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

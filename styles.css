@@ -1,0 +1,137 @@
+body {
+/* Estilos para el bot de derecho */
+.bot-chat {
+    background: #f0f0f0;
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 180px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+#bot-form {
+    display: flex;
+    gap: 0.5rem;
+}
+#bot-input {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+}
+.user-msg {
+    text-align: right;
+    margin: 0.3rem 0;
+    color: #003366;
+}
+.bot-msg {
+    text-align: left;
+    margin: 0.3rem 0;
+    color: #222;
+}
+/* Botón Google */
+.btn-google {
+    display: inline-block;
+    background: #4285F4;
+    color: #fff !important;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+.btn-google:hover {
+    background: #3367d6;
+}
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    color: #222;
+}
+header {
+    background: #003366;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #ffcc00;
+}
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+section {
+    margin-bottom: 2.5rem;
+}
+.equipo-lista {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.miembro {
+    background: #e6f0fa;
+    padding: 1rem;
+    border-radius: 8px;
+    flex: 1 1 200px;
+    min-width: 180px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 400px;
+}
+input, textarea, button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+}
+button {
+    background: #003366;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #0055a5;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #003366;
+    color: #fff;
+    border-radius: 0 0 10px 10px;
+    margin-top: 2rem;
+}
+.foro-mensajes {
+    margin-top: 1rem;
+    background: #f0f0f0;
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 60px;
+}
